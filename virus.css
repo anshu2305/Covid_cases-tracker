@@ -1,0 +1,275 @@
+body{
+    font-family:Montserrat Medium;
+    align-items: center;
+    animation: ease-in;
+    animation-delay: 1.8s;
+    background-color: rgb(231, 230, 230);
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    height:50%;
+    background-color: rgb(231, 230, 230);
+    margin: 0;
+    padding: 0;
+}
+
+.part1{
+    width: 50%;
+    overflow: hidden;
+}
+.part1 img{
+    width: 100%;
+    height:100%;
+}
+
+.part2{
+    width: 50%;
+    padding: 3px;
+    align-items:left;
+}
+
+.navbar{
+    width: 100%;
+    height: auto;
+    margin-top: 2em;
+    padding-top: 0;
+    padding: 0.7%;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+    justify-content: space-evenly;
+     font-size: 0.75em;
+    font-weight: 100;
+    font-family: sans-serif;
+    
+}
+.navbar a{
+    color: rgb(139, 196, 241);
+    padding:8px;
+    text-decoration: none;
+    background-color:whitesmoke;
+    border: white 1px solid;
+    cursor: pointer;
+}
+.navbar a i{
+    font-size: 1em;
+}
+
+.mid{
+    align-items: center;
+    margin: 4em;
+    font-family: sans-serif;
+    margin-top: 7em;
+    padding:1.5em ;
+}
+.mid h1{
+    color: rgb(85, 85, 88)70, 78);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 0;
+}
+.mid p{
+    font-size: 0.75rem;
+    font-weight: 200;
+    margin: 1em;
+    margin-left: 0em;
+}
+
+.mid button{
+    margin-top: 0.5em;
+    padding: 0.75em;
+    padding-right: 1.5em;
+    border-radius: 5px;
+    border: 0;
+    background-color: #d6d6d6;
+    text-align: left;
+    backdrop-filter: blur(0.2%);
+    box-shadow: -1px 1px 2px 2px gray;
+    cursor: pointer;
+}
+  
+.frst, .sec, .last{
+    padding: 2em;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sec{
+    background-color: rgb(173, 173, 173);
+}
+.frst, .last{
+    background-color: white;
+}
+
+.last li{
+    
+    align-items: center;
+}
+
+.frst h3,.sec h3,.last h3{
+    padding: 3px;
+    text-align: center;
+}
+.frst p,.sec p,.last p{
+    font-size: medium;
+}
+.sec{
+    margin: 0;
+}
+.slider{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    column-count: 2;
+    column-gap: 0.5rem;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.slider img{
+    width: 25%;
+    text-align: right;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+#inner{
+    margin: 0.5em;
+    padding: 0.5em;
+    font-size: 1rem;
+}
+
+.odd{
+    text-align: left;
+    flex-direction: row-reverse;
+}
+
+
+#img-slider{
+    overflow:hidden;
+    margin:5%;
+    margin-bottom: 2%;
+    }
+     
+#img-slider figure{
+    position:relative;
+    width:200%;
+    margin:0;
+    left:0;
+    animation: 15s img-slider infinite;
+}
+    
+#img-slider figure img{
+    width:12.5%;
+    float:left;
+}
+@keyframes img-slider {
+    0%{
+    left:0%;
+    }
+    20%{
+    left:0%;
+    }
+    25%{
+    left:-25%;
+    }
+    45%{
+    left:-25%;
+    }
+    50%{
+    left:-50%;
+    }
+    70%{
+    left:-50%;
+    }
+    75%{
+    left:-75%;
+    }
+    95%{
+    left:-75%;
+    }
+    100%{
+    left:-100%;
+    }
+}
+#footer{
+    float: bottom;
+    background-color: rgb(173, 173, 173);
+    margin:0;
+    padding:15px;
+    max-width:100%;
+    height:auto;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    }
+    
+#footer a{
+    padding:2px;
+    height:4em;
+    width:4em;
+    line-height:4em;
+    background-color: lightgrey;
+    border-radius:5px;
+    margin:1.5em;
+    display:center;
+    text-align: center;
+    align-items: center;
+    box-shadow: 1px 2px 2px 3px grey;
+    }
+    
+#footer a i {
+    margin:0.5em;
+    transition : all 0.5ms linear;
+    }
+    
+#footer a:hover i {
+    
+     transform: rotateZ(360deg);
+    }
+    
+.fa-instagram{
+    color: #a73e71;
+}
+.fa-facebook{
+    color: rgb(80, 80, 179);
+}
+.fa-linkedin{
+    color: rgb(0,64,128);
+}
+.fa-twitter{
+    color: #0097e6;
+}
+    
+@media (min-width:220px) and (max-width:650px){
+    #footer a{
+        margin:0.5em;
+        font-size: 0.5em;
+        padding: 1px;
+        
+    }
+    .part1 {
+        width: 50%;
+        height:auto;
+    }
+    .part1 img{
+        max-height: inherit;
+        align-self: center;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+    }
+    .part2{
+        width: 65%;
+    }
+    .navbar a{
+        padding: 1.5px;
+        font-size: xx-small;
+    }
+}   
