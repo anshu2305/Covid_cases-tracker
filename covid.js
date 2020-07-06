@@ -3,7 +3,6 @@ fetch("https://corona.lmao.ninja/v2/countries/India")
     return response.json();
 })
 .then((data)=> {
-    console.log(data);
     document.getElementById("flag").src=data.countryInfo.flag;
     document.getElementById("country").innerHTML=data.country.toLocaleString();
     document.getElementById("total").innerHTML=data.cases.toLocaleString();
