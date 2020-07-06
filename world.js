@@ -4,7 +4,6 @@ fetch("https://api.covid19api.com/summary")
     return response.json();
 })
 .then((data)=>{
-    console.log(data);
     document.getElementById("total").innerHTML=data.Global.TotalConfirmed.toLocaleString();
     document.getElementById("recovered").innerHTML=data.Global.TotalRecovered.toLocaleString();
     document.getElementById("death").innerHTML=data.Global.TotalDeaths.toLocaleString();
