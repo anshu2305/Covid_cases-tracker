@@ -382,7 +382,7 @@ setInterval( () => {
 
         console.log(typeof num[2]);
        })  
-},6000);
+},2000);
 /*
     
 
