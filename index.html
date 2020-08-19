@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<head>
+    <title> Covid-19 tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tstyle.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">    
+</head>
+<body>
+    <nav class="navbar">
+        <li><a href="#"><i class="fa fa-home"></i></a></li>
+        <li><a href="world.html" target="blank"><i class="fas fa-globe-americas"></i></a></li>
+        <li><a href="#"><i class="fa fa-area-chart"></i></a></li>
+        <li><a href="coronavirus.html"><i class="fas fa-virus"></i></i></a></li>
+    </nav>
+    <div class="container" data-aos="fade-down"  data-aos-duration="1500">
+        <h2>Covid-19 Tracker of <span id="country"></span><img src="" id="flag"></h2>
+        <div class="boxes">
+            <div class="box f">
+                <i class="fa fa-2x fa-stethoscope"></i>
+                <h4>Total Tests</h4>
+                <span id="tests"></span>
+            </div>
+            <div class="box e">
+                <i class="fa fa-2x fa-check-circle"></i>
+                <h4>Recovered cases</h4>
+                <span id="recovered"></span>
+            </div>
+
+            <div class="box b">
+                <i class="fa fa-2x fa-th-list"></i>
+                <h4>Total cases</h4>
+                <span id="total"></span>
+            </div>
+
+            <div class="box c">
+                <i class="fa fa-2x fa-ambulance"></i>
+                <h4>Critical cases</h4>
+                <span id="criti"></span>
+            </div>
+
+            <div class="box a">
+                <i class="fa fa-2x fa-tachometer"></i>
+                <h4>Active cases</h4>
+                <span id="active"></span>
+            </div>
+
+            <div class="box d">
+                <i class="fa fa-2x fa-times"></i>
+                <h4>Total Deceased</h4>
+                <span id="death"></span>
+            </div>
+ 
+        </div>
+    </div>
+<div class="merged"> 
+    <div class="new" data-aos="fade-right" data-aos-duration="1000">
+        <h2>Daily Chart (Last Updated <span id="time"></span>)</h2>
+        <table width="100%">
+            <tr>
+                <td>New Cases</td>
+                <td ><span id="todaycases"></span></td>
+            </tr>
+            <tr>
+                <td> Recovered</td>
+                <td ><span id="todayrec"></span></td>
+            </tr>
+            <tr>
+                <td> Deceased</td>
+                <td ><span id="todaydeaths"></span></td>
+            </tr>               
+        </table>
+    </div>    
+    <div class="permillion"data-aos="fade-left"  data-aos-duration="1500">
+        <h2> Chart by Per Million Population of India</h2>
+        <table width="100%">
+            <tr>
+                <td>Total Tests</td>
+                <td ><span id="testspm"></span></td>
+            </tr>
+            <tr>
+                <td>Total Cases</td>
+                <td ><span id="casespm"></span></td>
+            </tr>
+            <tr>
+                <td>Active cases</td>
+                <td ><span id="activepm"></span></td>
+            </tr>
+            <tr>
+                <td> Recovered</td>
+                <td ><span id="recpm"></span></td>
+            </tr>
+            <tr>
+                <td>Critical cases</td>
+                <td ><span id="critipm"></span></td>
+            </tr>
+            <tr>
+                <td> Deceased</td>
+                <td ><span id="deathspm"></span></td>
+            </tr>               
+        </table>
+    </div>
+</div>
+   
+    <div class="state-container" data-aos="fade-down"  data-aos-duration="2000">
+        <table  width=100% id="mytable" > 
+            <tr id="header">
+                <td style="color: white; background-color: black;" width="25%">State</i></td>
+                <td style="background-color: rgb(204, 161, 221)" width="20%"width="20%">Total
+                </td>
+                <td style="background-color: rgb(247, 174, 40);"width="15%">Active</td>
+                <td style="background-color: rgb(40, 163, 9);"width="27%">Recovered</td>
+                <td style="background-color: rgb(226, 32, 32);"width="27%">Deceased</td>
+            </tr>
+            <tr id="t1">
+                <td><span id="state-namet1"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt1" class="delta"></span>
+                    <span id="Totalt1"></span>
+                </td>
+                <td><span id="Activet1"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect1" class="deltar" ></span>
+                    <span id="Recoveredt1"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead1" class="deltad" ></span>
+                    <span id="Deceasedt1"></span>
+                </td>
+            </tr>
+            <tr id="t2">
+                <td><span id="state-namet2"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt2" class="delta"></span>
+                    <span id="Totalt2"></span>
+                </td>
+                <td><span id="Activet2"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect2" class="deltar" ></span>
+                    <span id="Recoveredt2"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead2" class="deltad" ></span>
+                    <span id="Deceasedt2"></span>
+                </td>
+            </tr>
+            <tr id="t3">
+                <td><span id="state-namet3"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt3" class="delta"></span>
+                    <span id="Totalt3"></span>
+                </td>
+                <td>
+                    <span id="Activet3"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect3" class="deltar" ></span>
+                    <span id="Recoveredt3"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead3" class="deltad" ></span>
+                    <span id="Deceasedt3"></span>
+                </td>
+            </tr>
+            <tr id="t4">
+                <td><span id="state-namet4"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt4" class="delta"></span>
+                    <span id="Totalt4"></span>
+                </td>
+                <td><span id="Activet4"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect4" class="deltar" ></span>
+                    <span id="Recoveredt4"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead4" class="deltad" ></span>
+                    <span id="Deceasedt4"></span>
+                </td>
+            </tr>
+            <tr id="t5">
+                <td><span id="state-namet5"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt5" class="delta"></span>
+                    <span id="Totalt5"></span>
+                </td>
+                <td><span id="Activet5"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect5" class="deltar" ></span>
+                    <span id="Recoveredt5"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead5" class="deltad" ></span>
+                    <span id="Deceasedt5"></span>
+                </td>
+            </tr>
+            <tr id="t6">
+                <td><span id="state-namet6"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt6" class="delta"></span>
+                    <span id="Totalt6"></span>
+                </td>
+                <td><span id="Activet6"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect6" class="deltar" ></span>
+                    <span id="Recoveredt6"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead6" class="deltad" ></span>
+                    <span id="Deceasedt6"></span>
+                </td>
+            </tr>
+            <tr id="t7">
+                <td><span id="state-namet7"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt7" class="delta"></span>
+                    <span id="Totalt7"></span>
+                </td>
+                <td><span id="Activet7"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect7" class="deltar" ></span>
+                    <span id="Recoveredt7"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead7" class="deltad" ></span>
+                    <span id="Deceasedt7"></span>
+                </td>
+            </tr>
+            <tr id="t8">
+                <td><span id="state-namet8"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt8" class="delta"></span>
+                    <span id="Totalt8"></span>
+                </td>
+                <td><span id="Activet8"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect8" class="deltar" ></span>
+                    <span id="Recoveredt8"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead8" class="deltad" ></span>
+                    <span id="Deceasedt8"></span>
+                </td>
+            </tr>
+            <tr id="t9">
+                <td><span id="state-namet9"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt9" class="delta"></span>
+                    <span id="Totalt9"></span>
+                </td>
+                <td><span id="Activet9"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect9" class="deltar" ></span>
+                    <span id="Recoveredt9"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead9" class="deltad" ></span>
+                    <span id="Deceasedt9"></span>
+                </td>
+            </tr>
+            <tr id="t10">
+                <td><span id="state-namet10"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt10" class="delta"></span>
+                    <span id="Totalt10"></span>
+                </td>
+                <td><span id="Activet10"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect10" class="deltar" ></span>
+                    <span id="Recoveredt10"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead10" class="deltad" ></span>
+                    <span id="Deceasedt10"></span>
+                </td>
+            </tr>
+            <tr id="t11">
+                <td><span id="state-namet11"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt11" class="delta"></span>
+                    <span id="Totalt11"></span>
+                </td>
+                <td><span id="Activet11"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect11" class="deltar" ></span>
+                    <span id="Recoveredt11"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead11" class="deltad" ></span>
+                    <span id="Deceasedt11"></span>
+                </td>
+            </tr>
+            <tr id="t12">
+                <td><span id="state-namet12"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt12" class="delta"></span>
+                    <span id="Totalt12"></span>
+                </td>
+                <td><span id="Activet12"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect12" class="deltar" ></span>
+                    <span id="Recoveredt12"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead12" class="deltad" ></span>
+                    <span id="Deceasedt12"></span>
+                </td>
+            </tr>
+            <tr id="t13">
+                <td><span id="state-namet13"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt13" class="delta"></span>
+                    <span id="Totalt13"></span>
+                </td>
+                <td><span id="Activet13"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect13" class="deltar" ></span>
+                    <span id="Recoveredt13"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead13" class="deltad" ></span>
+                    <span id="Deceasedt13"></span>
+                </td>
+            </tr>
+            <tr id="t14">
+                <td><span id="state-namet14"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt14" class="delta"></span>
+                    <span id="Totalt14"></span>
+                </td>
+                <td><span id="Activet14"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect14" class="deltar" ></span>
+                    <span id="Recoveredt14"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead14" class="deltad" ></span>
+                    <span id="Deceasedt14"></span>
+                </td>
+            </tr>
+            <tr id="t15">
+                <td><span id="state-namet15"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt15" class="delta"></span>
+                    <span id="Totalt15"></span>
+                </td>
+                <td><span id="Activet15"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect15" class="deltar" ></span>
+                    <span id="Recoveredt15"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead15" class="deltad" ></span>
+                    <span id="Deceasedt15"></span>
+                </td>
+            </tr>
+            <tr id="t16">
+                <td><span id="state-namet16"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt16" class="delta"></span>
+                    <span id="Totalt16"></span>
+                </td>
+                <td><span id="Activet16"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect16" class="deltar"></span>
+                    <span id="Recoveredt16"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead16" class="deltad" ></span>
+                    <span id="Deceasedt16"></span>
+                </td>
+            </tr>
+            <tr id="t17">
+                <td><span id="state-namet17"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt17" class="delta"></span>
+                    <span id="Totalt17"></span>
+                </td>
+                <td><span id="Activet17"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect17" class="deltar"></span>
+                    <span id="Recoveredt17"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead17" class="deltad" ></span>
+                    <span id="Deceasedt17"></span>
+                </td>
+            </tr>
+            <tr id="t18">
+                <td><span id="state-namet18"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt18" class="delta"></span>
+                    <span id="Totalt18"></span>
+                </td>
+                <td><span id="Activet18"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect18" class="deltar"></span>
+                    <span id="Recoveredt18"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead18" class="deltad" ></span>
+                    <span id="Deceasedt18"></span>
+                </td>
+            </tr>
+            <tr id="t19">
+                <td><span id="state-namet19"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt19" class="delta"></span>
+                    <span id="Totalt19"></span>
+                </td>
+                <td><span id="Activet19"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect19" class="deltar"></span>
+                    <span id="Recoveredt19"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead19" class="deltad" ></span>
+                    <span id="Deceasedt19"></span>
+                </td>
+            </tr>
+            <tr id="t20">
+                <td><span id="state-namet20"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt20" class="delta"></span>
+                    <span id="Totalt20"></span>
+                </td>
+                <td><span id="Activet20"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect20" class="deltar"></span>
+                    <span id="Recoveredt20"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead20" class="deltad" ></span>
+                    <span id="Deceasedt20"></span>
+                </td>
+            </tr>
+            <tr id="t21">
+                <td><span id="state-namet21"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt21" class="delta"></span>
+                    <span id="Totalt21"></span>
+                </td>
+                <td><span id="Activet21"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect21" class="deltar"></span>
+                    <span id="Recoveredt21"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead21" class="deltad" ></span>
+                    <span id="Deceasedt21"></span>
+                </td>
+            </tr>
+            <tr id="t22">
+                <td><span id="state-namet22"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt22" class="delta"></span>
+                    <span id="Totalt22"></span>
+                </td>
+                <td><span id="Activet22"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect22" class="deltar"></span>
+                    <span id="Recoveredt22"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead22" class="deltad" ></span>
+                    <span id="Deceasedt22"></span>
+                </td>
+            </tr>
+            <tr id="t23">
+                <td><span id="state-namet23"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt23" class="delta"></span>
+                    <span id="Totalt23"></span>
+                </td>
+                <td><span id="Activet23"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect23" class="deltar"></span>
+                    <span id="Recoveredt23"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead23" class="deltad" ></span>
+                    <span id="Deceasedt23"></span>
+                </td>
+            </tr>
+            <tr id="t24">
+                <td><span id="state-namet24"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt24" class="delta"></span>
+                    <span id="Totalt24"></span>
+                </td>
+                <td><span id="Activet24"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect24" class="deltar"></span>
+                    <span id="Recoveredt24"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead24" class="deltad" ></span>
+                    <span id="Deceasedt24"></span>
+                </td>
+            </tr>
+            <tr id="t25">
+                <td><span id="state-namet25"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt25" class="delta"></span>
+                    <span id="Totalt25"></span>
+                </td>
+                <td><span id="Activet25"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect25" class="deltar"></span>
+                    <span id="Recoveredt25"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead25" class="deltad" ></span>
+                    <span id="Deceasedt25"></span>
+                </td>
+            </tr>
+            <tr id="t26">
+                <td><span id="state-namet26"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt26" class="delta"></span>
+                    <span id="Totalt26"></span>
+                </td>
+                <td><span id="Activet26"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect26" class="deltar"></span>
+                    <span id="Recoveredt26"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead26" class="deltad" ></span>
+                    <span id="Deceasedt26"></span>
+                </td>
+            </tr>
+            <tr id="t27">
+                <td><span id="state-namet27"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt27" class="delta"></span>
+                    <span id="Totalt27"></span>
+                </td>
+                <td><span id="Activet27"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect27" class="deltar"></span>
+                    <span id="Recoveredt27"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead27" class="deltad" ></span>
+                    <span id="Deceasedt27"></span>
+                </td>
+            </tr>
+            <tr id="t28">
+                <td><span id="state-namet28"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt28" class="delta">
+                    </span>
+                    <span id="Totalt28"></span>
+                </td>
+                <td><span id="Activet28"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect28" class="deltar"></span>
+                    <span id="Recoveredt28"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead28" class="deltad" ></span><span id="Deceasedt28"></span></td>
+            </tr>
+            <tr id="t29">
+                <td><span id="state-namet29"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt29" class="delta"></span>
+                    <span id="Totalt29"></span>
+                </td>
+                <td><span id="Activet29"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect29" class="deltar"></span>
+                    <span id="Recoveredt29"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead29" class="deltad" ></span>
+                    <span id="Deceasedt29"></span>
+                </td>
+            </tr>
+            <tr id="t30">
+                <td><span id="state-namet30"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt30" class="delta"></span>
+                    <span id="Totalt30"></span>
+                </td>
+                <td><span id="Activet30"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect30" class="deltar"></span>
+                    <span id="Recoveredt30"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead30" class="deltad" ></span>
+                    <span id="Deceasedt30"></span>
+                </td>
+            </tr>
+            <tr id="t31">
+                <td><span id="state-namet31"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt31" class="delta"></span>
+                    <span id="Totalt31"></span>
+                </td>
+                <td><span id="Activet31"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect31" class="deltar"></span>
+                    <span id="Recoveredt31"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead31" class="deltad" ></span>
+                    <span id="Deceasedt31"></span>
+                </td>
+            </tr>
+            <tr id="t32">
+                <td><span id="state-namet32"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt32" class="delta"></span>
+                    <span id="Totalt32"></span>
+                </td>
+                <td><span id="Activet32"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect32" class="deltar"></span>
+                    <span id="Recoveredt32"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead32" class="deltad" ></span>
+                    <span id="Deceasedt32"></span>
+                </td>
+            </tr>
+            <tr id="t33">
+                <td><span id="state-namet33"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt33" class="delta"></span>
+                    <span id="Totalt33"></span>
+                </td>
+                <td><span id="Activet33"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect33" class="deltar"></span>
+                    <span id="Recoveredt33"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead33" class="deltad" ></span>
+                    <span id="Deceasedt33"></span>
+                </td>
+            </tr>
+            <tr id="t34">
+                <td><span id="state-namet34"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt34" class="delta"></span>
+                    <span id="Totalt34"></span></td>
+                <td><span id="Activet34"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect34" class="deltar"></span>
+                    <span id="Recoveredt34"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead34" class="deltad" ></span>
+                    <span id="Deceasedt34"></span>
+                </td>
+            </tr>
+            <tr id="t35">
+                <td><span id="state-namet35"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt35" class="delta"></span>
+                    <span id="Totalt35"></span>
+                </td>
+                <td><span id="Activet35"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect35" class="deltar"></span>
+                    <span id="Recoveredt35"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead35" class="deltad" ></span>
+                    <span id="Deceasedt35"></span>
+                </td>
+            </tr>
+            <tr id="t36">
+                <td><span id="state-namet36"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt36" class="delta"></span>
+                    <span id="Totalt36"></span>
+                </td>
+                <td><span id="Activet36"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect36" class="deltar"></span>
+                    <span id="Recoveredt36"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead36" class="deltad" ></span>
+                    <span id="Deceasedt36"></span>
+                </td>
+            </tr>
+            <tr id="t37">
+                <td><span id="state-namet37"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: blue;"></i>
+                    <span id="dtotalt37" class="delta"></span>
+                    <span id="Totalt37"></span>
+                </td>
+                <td><span id="Activet37"></span></td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: green;"></i>
+                    <span id="drect37" class="deltar"></span>
+                    <span id="Recoveredt37"></span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" style="font-size: smaller; color: red;"></i>
+                    <span id="ddead37" class="deltad" ></span>
+                    <span id="Deceasedt37"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+<script type="text/javascript" src="covid.js"></script>
+<script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</html>
