@@ -12,4 +12,4 @@ setInterval(() => {
         document.getElementById("todayrec").innerHTML=data.Global.NewRecovered;
         document.getElementById("time").innerHTML=data.Date;
     })
-}, 60000);    
+}, 6000);    
