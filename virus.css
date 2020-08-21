@@ -278,7 +278,7 @@ body{
     }
     .mid p{
     font-size: 0.65rem;
-    font-weight: 300;
+    font-weight: 600;
     }
     .navbar{
 	padding-right:20px;
@@ -286,7 +286,7 @@ body{
     }
     .navbar a{
         padding: 0.5em;
-	font-weight: 300;
+	font-weight: 600;
 	font-size: 10px;
     }
 }   
