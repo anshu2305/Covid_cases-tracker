@@ -247,18 +247,24 @@ body{
     color: #0097e6;
 }
     
-@media (min-width:220px) and (max-width:650px){
+@media (min-width:120px) and (max-width:580px){
     #footer a{
         margin:0.5em;
         font-size: 0.5em;
         padding: 1px;
         
     }
+    .content{
+	flex-direction: column-reverse;
+`   }
+
     .part1 {
-        width: 50%;
-        height:auto;
+        width: 100vw;
+        height:100vh;
     }
     .part1 img{
+         width: 100vw;
+         height: 100vh;
         max-height: inherit;
         align-self: center;
         text-align: center;
@@ -266,10 +272,17 @@ body{
         justify-content: center;
     }
     .part2{
-        width: 65%;
+        width: 100vw;
+    }
+    .mid p{
+    font-size: 0.65rem;
+    }
+    .navbar{
+	padding-right:20px;
+	justify-content: space-evenly;
     }
     .navbar a{
-        padding: 1.5px;
-        font-size: xx-small;
+        padding: 0.5em;
+	    font-size: 10px;
     }
 }   
