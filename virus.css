@@ -24,7 +24,7 @@ body{
     overflow: hidden;
 }
 .part1 img{
-    width: 100%;
+    width: 100vw;
     height:100%;
 }
 
@@ -200,12 +200,12 @@ body{
     }
 }
 #footer{
-	width:100vw;
     float: bottom;
     background-color: rgb(173, 173, 173);
     margin:0;
     padding:15px;
     max-width:100%;
+    width: 100vw;
     height:auto;
     display:flex;
     justify-content: center;
@@ -265,6 +265,7 @@ body{
         height:100vh;
     }
     .part1 img{
+        margin: 0;
         width: 100vw;
         height: 100vh;
         max-height: inherit;
