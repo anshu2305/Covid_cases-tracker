@@ -1,9 +1,16 @@
+function myFunc(){
+    document.getElementById("preloader").hidden=true;
+    document.getElementById("preloader").style.display="none";
+    console.log("loaded");
+}
+
 setInterval( () => {
     fetch("https://corona.lmao.ninja/v2/countries/India")
         .then((response)=>{
         return response.json();
         })
         .then((data)=> {
+        myFunc();
         document.getElementById("flag").src=data.countryInfo.flag;
         document.getElementById("country").innerHTML=data.country.toLocaleString();
         document.getElementById("total").innerHTML=data.cases.toLocaleString();
