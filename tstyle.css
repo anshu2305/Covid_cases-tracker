@@ -225,6 +225,10 @@ table #header{
     }
 }
 @media (max-width: 555px) and (min-width: 80px) {
+    .navbar a{
+        padding: 2px;
+    
+    }
     .boxes{
         column-count: 2;
         column-gap: 0.5rem;
