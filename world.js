@@ -2,7 +2,8 @@ function myFunc(){
     document.getElementById("preloader").hidden=true;
     document.getElementById("preloader").style.display="none";
     console.log("loaded");
-}    
+}
+ 
 setInterval(() => {
     fetch("https://api.covid19api.com/summary")
     .then((response)=>{
