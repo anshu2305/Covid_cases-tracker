@@ -35,6 +35,20 @@ body{
     background-color: white;
     border: white 2px solid;
 }
+#preloader{
+    margin: 0;
+    padding:0;
+    width: 100vw;
+    display: block;
+    animation: none;
+    align-content: center;
+    text-align: center;    
+    background-color: white;
+}
+#gif{
+    margin: 0;
+    padding:0;
+}
 .container{
     z-index:1;
     width:80%;
