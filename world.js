@@ -9,8 +9,8 @@ setInterval(() => {
     .then((response)=>{
         return response.json();
     })
-    .then((data)=>{
-        myFunc();
+    .then((data)=>
+          myFunc();
         document.getElementById("total").innerHTML=data.Global.TotalConfirmed.toLocaleString();
         document.getElementById("recovered").innerHTML=data.Global.TotalRecovered.toLocaleString();
         document.getElementById("death").innerHTML=data.Global.TotalDeaths.toLocaleString();
