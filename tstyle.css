@@ -64,7 +64,7 @@ body{
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-color: beige; 
+    background-color: white; 
     box-shadow: 1px 5px 3px 5px rgb(167, 166, 166);
 }
 .boxes{
@@ -152,7 +152,7 @@ img#flag{
 }
 
 .state-container{
-    font-family: sans-serif;
+    font-family: sans-serif, serif, cursive ;
     z-index:1;
     width:80%;
     height:auto;
@@ -163,7 +163,7 @@ img#flag{
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-color: cornsilk;
+    background-color: rgb(255,248,220);
     box-shadow: 1px 5px 3px 5px rgb(167, 166, 166);
 }
 
