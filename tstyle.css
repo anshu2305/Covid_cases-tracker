@@ -152,6 +152,7 @@ img#flag{
 }
 
 .state-container{
+    font-family: sans-serif;
     z-index:1;
     width:80%;
     height:auto;
