@@ -183,12 +183,15 @@ img#flag{
 .new{
     padding: 5%;
 }
+#mytable{
+    overflow: scroll;
+}
 table{
     /*border: solid 0.2px whitesmoke;*/
     box-shadow: rgba(243, 230, 242, 0.596);
     border-radius:5px;
 }
-table>tr,td{
+table>tr,td,th{
     /*background-color: lightgray;*/
     /*border: 1px rgba(255, 255, 255, 0.849) solid;*/
     /*background-color: rgba(241, 237, 239, 0.774);*/
@@ -202,7 +205,7 @@ table>tr,td{
     text-align: center;
     padding: 1.5%;
 }
-table #header{
+thead{
     font-weight: bold;
     font-size: larger;
 }
