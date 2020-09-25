@@ -14,6 +14,10 @@ body{
     padding: 0;
     margin: 0;
 }
+*{
+    box-sizing: border-box;
+}
+
 .navbar{
     width: 100%;
     height: auto;
@@ -190,12 +194,13 @@ table>tr,td{
     /*background-color: rgba(241, 237, 239, 0.774);*/
     background-color: rgb(197, 198, 199);
     border-radius:7px;
-    margin: 0;
+    margin: 2rem;
+    font-weight: 500;
     align-content: center;
     align-items: center;
     justify-content:center;
     text-align: center;
-    padding: 1%;
+    padding: 1.5%;
 }
 table #header{
     font-weight: bold;
@@ -211,17 +216,25 @@ table #header{
     display: flex;
 }
 
-@media (max-width: 750px){
+@media (max-width: 750px) and (min-width: 556px){
     .boxes{
         column-count: 2;
         column-gap: 0.5rem;
         justify-content: space-around;
     }
     .state-container{
-        width:94%;
+        z-index: 1;
+        padding-right: 2rem;
+        width: 80%;
+        overflow-x: auto;
+    }
+    #mytable{
+        padding: 2rem;
+        width:120%;
+        overflow-x: auto;
     }
     body{
-        font-size: smaller;
+        font-size: small;
     }
 }
 @media (max-width: 555px) and (min-width: 80px) {
@@ -233,25 +246,32 @@ table #header{
         column-count: 2;
         column-gap: 0.5rem;
         justify-content: space-evenly;
-        font-size: smaller;  
+        font-size: small;  
     }
     .state-container{
-        width:100%;
-        padding: 1%;
+        width:80%;
+        margin: 2rem;
+        overflow-x : auto;
     }
-    .body{
-        font-size: xx-small;
+    #mytable{  
+        width:150%;
+        overflow-x: auto;
+        padding: 1rem;
     }
+
     td{
-        padding:2px;
-        font-size:7px;
+        padding:5px;
+        font-size:10px;
     }
     table #header{
         font-weight: bold;
         
     }
     .merged{
-        display: inline;
+        display:flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
     }
     .new,.permillion{
         width: 90%;
