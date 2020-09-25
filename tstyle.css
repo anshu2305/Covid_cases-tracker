@@ -262,8 +262,9 @@ thead{
     }
 
     td{
+        max-width: fit-content;
         padding:7px;
-        font-size:15px;
+        font-size:13px;
     }
     table #header{
         font-weight: bold;
