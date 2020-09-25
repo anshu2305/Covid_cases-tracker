@@ -1,7 +1,6 @@
 function myFunc(){
     document.getElementById("preloader").hidden=true;
     document.getElementById("preloader").style.display="none";
-    console.log("loaded");
 }
 
 setInterval( () => {
@@ -40,12 +39,9 @@ setInterval( () => {
         document.getElementById("todayrec").innerHTML=data.statewise[0].deltarecovered;
         document.getElementById("time").innerHTML=data.statewise[0].lastupdatedtime;
 
-        var num=[];
-        //var newarr=[];
-
         document.getElementById("state-namet1").innerHTML=data.statewise[1].state;
         document.getElementById("dtotalt1").innerHTML=data.statewise[1].deltaconfirmed;
-        num[1]=document.getElementById("Totalt1").innerHTML=data.statewise[1].confirmed;
+        document.getElementById("Totalt1").innerHTML=data.statewise[1].confirmed;
         //newarr[1]=parseInt("num[1]");   
         document.getElementById("Activet1").innerHTML=data.statewise[1].active;
         document.getElementById("drect1").innerHTML=data.statewise[1].deltarecovered;
@@ -58,8 +54,7 @@ setInterval( () => {
 
         document.getElementById("state-namet2").innerHTML=data.statewise[2].state;
         document.getElementById("dtotalt2").innerHTML=data.statewise[2].deltaconfirmed;
-        num[2]=document.getElementById("Totalt2").innerHTML=data.statewise[2].confirmed;
-        //newarr[2]=parseInt("num[2]"); 
+        document.getElementById("Totalt2").innerHTML=data.statewise[2].confirmed;
         document.getElementById("Activet2").innerHTML=data.statewise[2].active;
         document.getElementById("drect2").innerHTML=data.statewise[2].deltarecovered;
         document.getElementById("Recoveredt2").innerHTML=data.statewise[2].recovered;
@@ -68,8 +63,7 @@ setInterval( () => {
 
         document.getElementById("state-namet3").innerHTML=data.statewise[3].state;
         document.getElementById("dtotalt3").innerHTML=data.statewise[3].deltaconfirmed;
-        num[3]=document.getElementById("Totalt3").innerHTML=data.statewise[3].confirmed;
-        //newarr[3]=parseInt("num[3]"); 
+        document.getElementById("Totalt3").innerHTML=data.statewise[3].confirmed;
         document.getElementById("Activet3").innerHTML=data.statewise[3].active;
         document.getElementById("drect3").innerHTML=data.statewise[3].deltarecovered;
         document.getElementById("Recoveredt3").innerHTML=data.statewise[3].recovered;
@@ -78,8 +72,7 @@ setInterval( () => {
 
         document.getElementById("state-namet4").innerHTML=data.statewise[4].state;
         document.getElementById("dtotalt4").innerHTML=data.statewise[4].deltaconfirmed;
-        num[4]=document.getElementById("Totalt4").innerHTML=data.statewise[4].confirmed;
-        //newarr[4]=parseInt("num[4]"); 
+        document.getElementById("Totalt4").innerHTML=data.statewise[4].confirmed;
         document.getElementById("Activet4").innerHTML=data.statewise[4].active;
         document.getElementById("drect4").innerHTML=data.statewise[4].deltarecovered;
         document.getElementById("Recoveredt4").innerHTML=data.statewise[4].recovered;
@@ -88,7 +81,7 @@ setInterval( () => {
 
         document.getElementById("state-namet5").innerHTML=data.statewise[5].state;
         document.getElementById("dtotalt5").innerHTML=data.statewise[5].deltaconfirmed;
-        num[5]=document.getElementById("Totalt5").innerHTML=data.statewise[5].confirmed;
+        document.getElementById("Totalt5").innerHTML=data.statewise[5].confirmed;
         document.getElementById("Activet5").innerHTML=data.statewise[5].active;
         document.getElementById("drect5").innerHTML=data.statewise[5].deltarecovered;
         document.getElementById("Recoveredt5").innerHTML=data.statewise[5].recovered;
@@ -97,7 +90,7 @@ setInterval( () => {
 
         document.getElementById("state-namet6").innerHTML=data.statewise[6].state;
         document.getElementById("dtotalt6").innerHTML=data.statewise[6].deltaconfirmed;
-        num[6]=document.getElementById("Totalt6").innerHTML=data.statewise[6].confirmed;
+        document.getElementById("Totalt6").innerHTML=data.statewise[6].confirmed;
         document.getElementById("Activet6").innerHTML=data.statewise[6].active;
         document.getElementById("drect6").innerHTML=data.statewise[6].deltarecovered;
         document.getElementById("Recoveredt6").innerHTML=data.statewise[6].recovered;
@@ -106,7 +99,7 @@ setInterval( () => {
 
         document.getElementById("state-namet7").innerHTML=data.statewise[7].state;
         document.getElementById("dtotalt7").innerHTML=data.statewise[7].deltaconfirmed;
-        num[7]=document.getElementById("Totalt7").innerHTML=data.statewise[7].confirmed;
+        document.getElementById("Totalt7").innerHTML=data.statewise[7].confirmed;
         document.getElementById("Activet7").innerHTML=data.statewise[7].active;
         document.getElementById("drect7").innerHTML=data.statewise[7].deltarecovered;
         document.getElementById("Recoveredt7").innerHTML=data.statewise[7].recovered;
@@ -115,7 +108,7 @@ setInterval( () => {
 
         document.getElementById("state-namet8").innerHTML=data.statewise[8].state;
         document.getElementById("dtotalt8").innerHTML=data.statewise[8].deltaconfirmed;
-        num[8]=document.getElementById("Totalt8").innerHTML=data.statewise[8].confirmed;
+        document.getElementById("Totalt8").innerHTML=data.statewise[8].confirmed;
         document.getElementById("Activet8").innerHTML=data.statewise[8].active;
         document.getElementById("drect8").innerHTML=data.statewise[8].deltarecovered;
         document.getElementById("Recoveredt8").innerHTML=data.statewise[8].recovered;
@@ -124,7 +117,7 @@ setInterval( () => {
 
         document.getElementById("state-namet9").innerHTML=data.statewise[9].state;
         document.getElementById("dtotalt9").innerHTML=data.statewise[9].deltaconfirmed;
-        num[9]=document.getElementById("Totalt9").innerHTML=data.statewise[9].confirmed;
+        document.getElementById("Totalt9").innerHTML=data.statewise[9].confirmed;
         document.getElementById("Activet9").innerHTML=data.statewise[9].active;
         document.getElementById("drect9").innerHTML=data.statewise[9].deltarecovered;
         document.getElementById("Recoveredt9").innerHTML=data.statewise[9].recovered;
@@ -133,7 +126,7 @@ setInterval( () => {
 
         document.getElementById("state-namet10").innerHTML=data.statewise[10].state;
         document.getElementById("dtotalt10").innerHTML=data.statewise[10].deltaconfirmed;
-        num[10]=document.getElementById("Totalt10").innerHTML=data.statewise[10].confirmed;
+        document.getElementById("Totalt10").innerHTML=data.statewise[10].confirmed;
         document.getElementById("Activet10").innerHTML=data.statewise[10].active;
         document.getElementById("drect10").innerHTML=data.statewise[10].deltarecovered;
         document.getElementById("Recoveredt10").innerHTML=data.statewise[10].recovered;
@@ -142,7 +135,7 @@ setInterval( () => {
 
         document.getElementById("state-namet11").innerHTML=data.statewise[11].state;
         document.getElementById("dtotalt11").innerHTML=data.statewise[11].deltaconfirmed;
-        num[11]=document.getElementById("Totalt11").innerHTML=data.statewise[11].confirmed;
+        document.getElementById("Totalt11").innerHTML=data.statewise[11].confirmed;
         document.getElementById("Activet11").innerHTML=data.statewise[11].active;
         document.getElementById("drect11").innerHTML=data.statewise[11].deltarecovered;
         document.getElementById("Recoveredt11").innerHTML=data.statewise[11].recovered;
@@ -151,7 +144,7 @@ setInterval( () => {
 
         document.getElementById("state-namet12").innerHTML=data.statewise[12].state;
         document.getElementById("dtotalt12").innerHTML=data.statewise[12].deltaconfirmed;
-        num[12]=document.getElementById("Totalt12").innerHTML=data.statewise[12].confirmed;
+        document.getElementById("Totalt12").innerHTML=data.statewise[12].confirmed;
         document.getElementById("Activet12").innerHTML=data.statewise[12].active;
         document.getElementById("drect12").innerHTML=data.statewise[12].deltarecovered;
         document.getElementById("Recoveredt12").innerHTML=data.statewise[12].recovered;
@@ -382,12 +375,6 @@ setInterval( () => {
         document.getElementById("Recoveredt37").innerHTML=data.statewise[37].recovered;
         document.getElementById("ddead37").innerHTML=data.statewise[37].deltadeaths;
         document.getElementById("Deceasedt37").innerHTML=data.statewise[37].deaths;
-            
-        for (let i = 1; i < num.length; i++) {
-            num [i]=parseInt('num[i]');
-        }
-
-        console.log(typeof num[2]);
        })  
 },2000);
 /*
