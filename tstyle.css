@@ -249,7 +249,7 @@ thead{
         column-count: 2;
         column-gap: 0.5rem;
         justify-content: space-evenly;
-        font-size: small;  
+        
     }
     .state-container{
         width:80%;
@@ -280,6 +280,6 @@ thead{
         width: 90%;
         margin-left: 0;
         padding: 1.5%;
-        font-size: smaller;
+        font-size: small;
     }
 }
