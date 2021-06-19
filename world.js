@@ -9,7 +9,7 @@ setInterval(() => {
     .then((response)=>{
         return response.json();
     })
-    .then((data)=>
+    .then((data)=> {
           myFunc();
         document.getElementById("total").innerHTML=data.Global.TotalConfirmed;
         document.getElementById("recovered").innerHTML=data.Global.TotalRecovered;
