@@ -11,9 +11,9 @@ setInterval(() => {
     })
     .then((data)=> {
           myFunc();
-        document.getElementById("total").innerHTML=data.Global.TotalConfirmed;
-        document.getElementById("recovered").innerHTML=data.Global.TotalRecovered;
-        document.getElementById("death").innerHTML=data.Global.TotalDeaths;
+        document.getElementById("total").innerHTML=data.Global.TotalConfirmed.toLocaleString();
+        document.getElementById("recovered").innerHTML=data.Global.TotalRecovered.toLocaleString();
+        document.getElementById("death").innerHTML=data.Global.TotalDeaths.toLocaleString();
         document.getElementById("todaycases").innerHTML=data.Global.NewConfirmed;
         document.getElementById("todaydeaths").innerHTML=data.Global.NewDeaths;
         document.getElementById("todayrec").innerHTML=data.Global.NewRecovered;
