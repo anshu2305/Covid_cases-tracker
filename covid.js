@@ -27,7 +27,7 @@ setInterval( () => {
         document.getElementById("activepm").innerHTML=data.activePerOneMillion;
         })
 
-        fetch("	https://api.covid19india.org/data.json")
+        fetch("https://api.covid19india.org/data.json")
         .then((response)=>{
         return response.json();
         })
