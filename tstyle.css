@@ -1,0 +1,311 @@
+
+body{
+    height:200%;
+    font-family:cursive;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(197, 198, 199);
+    animation: ease-in;
+    animation-delay: 1.8s;
+    animation-duration: 100ms;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+}
+
+.navbar{
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    padding: 0.7%;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    
+}
+.navbar a{
+    color: steelblue;
+    padding: 3px 2px 3px 2px;
+    background-color: white;
+    border: white 2px solid;
+}
+#preloader{
+    margin: 0;
+    padding:0;
+    width: 100vw;
+    display: block;
+    animation: none;
+    align-content: center;
+    text-align: center;    
+    background-color: white;
+}
+#gif{
+    margin: 0;
+    padding:0;
+}
+.container{
+    z-index:1;
+    width:80%;
+    height:auto;
+    margin:30px; 
+    padding: 3%;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: white; 
+    box-shadow: 1px 5px 3px 5px rgb(167, 166, 166);
+}
+.boxes{
+    position: relative;
+    column-count: 3;
+    column-gap: 1rem;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+h2{
+    margin:15px;
+    margin-top:0;
+    margin-left: 0px;
+    padding: 5px;
+    align-self: center;
+    text-align: center;
+}
+img#flag{
+    margin-left: 10px;
+    margin-top:5px;
+    height:20px;
+    width:20px;
+    background-color: lightslategray;
+}
+.box{
+    width:100%;
+    height:auto;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    background-color:rgba(194, 197, 196, 0.384);
+}
+.box.a{
+    background-color: rgb(248, 174, 37);
+    background-image: linear-gradient(rgb(248, 174, 37),yellow);
+    
+}
+.box.b{
+    background-color:  skyblue;
+    background-image: linear-gradient(rgb(89, 146, 168),skyblue);
+}
+.box.c{
+    background-color: rgb(243, 113, 7);
+    background-image: linear-gradient(rgb(243, 113, 7),rgb(247, 182, 97));
+}
+.box.d{
+    background-color: rgba(255, 0, 0, 0.85);
+    background-image: linear-gradient(rgb(247, 21, 21),rgb(252, 146, 85));
+}
+.box.e{
+    background-color:green;
+    background-image: linear-gradient(green,rgb(193, 248, 66));
+}
+.box.f{
+    background-color:rgba(241, 166, 238, 0.596);
+    background-image: linear-gradient(rgb(172, 124, 172),rgba(212, 167, 210, 0.596));
+}
+.box h4{
+    margin:0;
+    padding: 2%;
+    font-size: 1.2em;
+}
+.box span{
+    margin:2px;
+    margin-top:0;
+    padding-top: 0;
+    
+    padding-bottom:5%;
+    font-family: sans-serif;
+    font-size:1.2em;
+}
+.delta{
+    font-size: 0.7em;
+    color:blue;
+}
+.deltar{
+    font-size: 0.7em;
+    color:green;
+}
+
+.deltad{
+    font-size: 0.7em;
+    color:red;
+}
+
+.state-container{
+    font-family: sans-serif, serif, cursive ;
+    z-index:1;
+    width:80%;
+    height:auto;
+    margin:20px; 
+    padding: 3%;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255,248,220);
+    box-shadow: 1px 5px 3px 5px rgb(167, 166, 166);
+}
+
+.new,.permillion{
+    z-index:1;
+    width:40%;
+    height:auto;
+    margin:20px; 
+    padding: 2%;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: cornsilk;
+    box-shadow: 1px 5px 3px 5px rgb(167, 166, 166);
+}
+.new{
+    padding: 5%;
+}
+#mytable{
+    overflow: scroll;
+}
+table{
+    /*border: solid 0.2px whitesmoke;*/
+    box-shadow: rgba(243, 230, 242, 0.596);
+    border-radius:5px;
+    justify-content: space-around;
+}
+table>tr,td,th{
+    /*background-color: lightgray;*/
+    /*border: 1px rgba(255, 255, 255, 0.849) solid;*/
+    /*background-color: rgba(241, 237, 239, 0.774);*/
+    max-width: fit-content;
+    background-color: rgb(197, 198, 199);
+    border-radius:7px;
+    margin: 2rem;
+    font-weight: 600;
+    align-content: center;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    padding: 1rem;
+}
+thead{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.merged{
+    width: 80%; 
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+#overlaybanner{
+    position: fixed;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2;
+    cursor: pointer;
+}
+  
+#overlaytext{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+@media (max-width: 750px) and (min-width: 556px){
+    .boxes{
+        column-count: 2;
+        column-gap: 0.5rem;
+        justify-content: space-around;
+    }
+    .state-container{
+        z-index: 1;
+        padding-right: 2rem;
+        width: 80%;
+        overflow-x: auto;
+    }
+    #mytable{
+        padding: 2rem;
+        width:120%;
+        overflow-x: auto;
+    }
+    
+}
+@media (max-width: 555px) and (min-width: 80px) {
+    .navbar a{
+        padding: 2px;
+    
+    }
+    .boxes{
+        column-count: 2;
+        column-gap: 0.5rem;
+        justify-content: space-evenly;
+        
+    }
+    .state-container{
+        width:80%;
+        margin: 2rem;
+        overflow-x : auto;
+    }
+    #mytable{  
+        width:150%;
+        overflow-x: auto;
+        padding: 1rem;
+    }
+
+    td{
+        max-width: fit-content;
+        padding:7px;
+        font-size:13px;
+    }
+    table #header{
+        font-weight: bold;
+        
+    }
+    .merged{
+        display:flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+    .new,.permillion{
+        width: 90%;
+        margin-left: 0;
+        padding: 1.5%;
+        font-size: small;
+    }
+}
